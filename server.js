@@ -6,8 +6,12 @@ const PORT = 3000 || process.env.PORT;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(PORT, (err)=>{
-    if(err) throw err;
+app.get('/', (request, response) => {
+    return response.send('Hello');
+});
+
+app.listen(PORT, (err) => {
+    if (err) throw err;
 
     console.log('listening on port', PORT);
 });
